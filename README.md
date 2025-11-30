@@ -21,7 +21,7 @@ You can send multiple URLs in a single API request and receive all shortened res
 2. Activate the plugin in your YOURLS admin panel:  
 **Admin → Manage Plugins → Activate "Batch Shortener API"**
 
-3. The new endpoint will be available at: **http://yourdomain.com/yourls/yourls-api.php?signature=your_signature&action=batch_shortener&format=json**
+3. The new endpoint will be available at: **http://yourdomain.com/yourls-api.php?signature=your_signature&action=batch_shortener&format=json**
 
 ---
 
@@ -29,7 +29,7 @@ You can send multiple URLs in a single API request and receive all shortened res
 
 ### Request
 **Method:** `POST`  
-**URL:** `http://yourdomain.com/yourls/yourls-api.php?signature=your_signature&action=batch_shortener&format=json`  
+**URL:** `http://yourdomain.com/yourls-api.php?signature=your_signature&action=batch_shortener&format=json`  
 **Headers:** `Content-Type: application/json`
 
 **Body:**
@@ -76,7 +76,7 @@ You can send multiple URLs in a single API request and receive all shortened res
 import requests
 import json
 
-url = "http://localhost:8081/yourls/?batch_api"
+url = "http://localhost:8081/?batch_api"
 payload = {
     "urls": [
         {"id": 1, "url": "https://example.com/5"},
@@ -93,7 +93,7 @@ print(response.json())
 
 ```php
 <?php
-$endpoint = "http://localhost:8081/yourls/?batch_api";
+$endpoint = "http://localhost:8081/?batch_api";
 
 $data = [
     "urls" => [
@@ -129,7 +129,7 @@ class Program
     static async Task Main()
     {
         var client = new HttpClient();
-        var url = "http://localhost:8081/yourls/?batch_api";
+        var url = "http://localhost:8081/?batch_api";
 
         var json = @"{
             ""urls"": [
@@ -152,7 +152,7 @@ class Program
 ## ⚙️ Example with curl
 
 ```bash
-curl -X POST "http://localhost:8081/yourls/?batch_api" \
+curl -X POST "http://localhost:8081/?batch_api" \
   -H "Content-Type: application/json" \
   -d '{
     "urls": [
